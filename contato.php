@@ -23,13 +23,21 @@
 
 <?php 
 
-$banco = "apethotel";
-$usuario = "apethotel";
-$senha = "********";
-$hostname = "mysql.apethotel.com.br";
-$conn = mysqli_connect($hostname,$usuario,$senha, $banco); 
-$query = "select * from acesso_usuario";
-$variavel = mysqli_query($conn,$query);
+	$servidor = "localhost";
+	$usuario = "root";
+	$senha = "";
+	$dbname = "testes";
+	
+	//Criar a conexao
+	$conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+	
+	if(!$conn){
+		die("Falha na conexao: " . mysqli_connect_error());
+	}else{
+		//echo "Conexao realizada com sucesso";
+		$query = "SELECT * FROM acesso_usuario";
+		$variavel = mysqli_query($conn,$query);
+	}	
 
 ?>
 
