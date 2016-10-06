@@ -11,10 +11,15 @@
 		$result_usuario = "SELECT * FROM acesso_usuario WHERE email = '$usuario' && senha = '$senha' LIMIT 1";
 		$resultado_usuario = mysqli_query($conn, $result_usuario);
 		$resultado = mysqli_fetch_assoc($resultado_usuario);
+		$_SESSION['usuarioEmail'] = $resultado['email'];
+		$_SESSION['usuarioSenha'] = $resultado['senha'];
+		$_SESSION['usuarioId'] = $resultado['ID'];
 
 		//Encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
 		if(isset($resultado)){
+
 			header("Location: contato.php");
+
 		}else{	
 			//mensagem de erro
 			$_SESSION['loginErro'] = "Usuário ou senha Inválido";
@@ -25,4 +30,5 @@
 		$_SESSION['loginErro'] = "Usuário ou senha inválido";
 		header("Location: login.php");
 	}
+
 ?>

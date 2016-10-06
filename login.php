@@ -13,13 +13,16 @@
    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <link href="estilo.css" rel="stylesheet">
+    <link href="estiloLogin.css" rel="stylesheet">
 
   </head>
 
   <body>
+    <?php
+      unset($_SESSION['usuarioId'], $_SESSION['usuarioSenha'], $_SESSION['usuarioEmail'] )
 
-    <div class="container">
+    ?>
+    <div class="container">   
 
       <form class="form-signin" method="POST" action="valida.php">
         <h2 class="form-signin-heading">ApetHotel</h2>

@@ -1,3 +1,8 @@
+<?php 
+	session_start();
+	include_once("seguranca.php");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,28 +23,6 @@
 <!-- google-fonts -->
 <link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
 
-
-
-
-<?php 
-
-	$servidor = "localhost";
-	$usuario = "root";
-	$senha = "";
-	$dbname = "testes";
-	
-	//Criar a conexao
-	$conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
-	
-	if(!$conn){
-		die("Falha na conexao: " . mysqli_connect_error());
-	}else{
-		//echo "Conexao realizada com sucesso";
-		$query = "SELECT * FROM acesso_usuario";
-		$variavel = mysqli_query($conn,$query);
-	}	
-
-?>
 
 
 </head>
